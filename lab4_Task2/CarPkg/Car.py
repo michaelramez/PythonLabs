@@ -1,5 +1,5 @@
 class Car:
-    def __init__(self, name, velocity, fuelRate=100):
+    def __init__(self, name: str, velocity: int, fuelRate=100):
         self.name = name
         self.velocity = velocity
         self.fuelRate = fuelRate
@@ -9,7 +9,7 @@ class Car:
         return self.velocity
 
     @velocity.setter
-    def velocity(self, velocity):
+    def velocity(self, velocity: int):
         if isinstance(velocity, int):
             if 0 <= velocity <= 200:
                 self.velocity = velocity
@@ -23,7 +23,7 @@ class Car:
         return self.fuelRate
 
     @fuelRate.setter
-    def fuelRate(self, fuelRate):
+    def fuelRate(self, fuelRate: int):
         if isinstance(fuelRate, int):
             if 0 <= fuelRate <= 100:
                 self.fuelRate = fuelRate
@@ -32,7 +32,7 @@ class Car:
         else:
             print("Fuel rate must be integer")
 
-    def Run(self, velocity, distance):
+    def Run(self, velocity: int, distance: int):
         if not isinstance(velocity, int):
             print("Velocity must be integer")
         if not isinstance(distance, int):
@@ -48,7 +48,7 @@ class Car:
 
         self.Stop(remDistance)
 
-    def Stop(self, remDistance):
+    def Stop(self, remDistance: int):
         self.velocity = 0
         if remDistance == 0:
             print("You reached your destination")

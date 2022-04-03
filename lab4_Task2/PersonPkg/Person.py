@@ -1,7 +1,7 @@
 class Person:
     moods = ("happy", "tired", "lazy")
 
-    def __init__(self, name, money):
+    def __init__(self, name: str, money: int):
         self.name = name
         self.money = money
         self.mood = None
@@ -12,7 +12,7 @@ class Person:
         return self.money
 
     @money.setter
-    def money(self, money):
+    def money(self, money: int):
         if isinstance(money, int):
             if money >= 0:
                 self.money = money
@@ -27,7 +27,7 @@ class Person:
         return self.healthRate
 
     @healthRate.setter
-    def healthRate(self, healthRate):
+    def healthRate(self, healthRate: int):
         if isinstance(healthRate, int):
             if 0 <= healthRate <= 100:
                 self.healthRate = healthRate
@@ -36,7 +36,7 @@ class Person:
         else:
             print("Health rate must be integer")
 
-    def Sleep(self, cls, hours):
+    def Sleep(self, cls, hours: int):
         if isinstance(hours, int):
             if hours == 7:
                 self.mood = cls.moods[0]
@@ -49,7 +49,7 @@ class Person:
         else:
             print("Hours must be integer")
 
-    def Eat(self, meals):
+    def Eat(self, meals: int):
         if isinstance(meals, int):
             if meals == 3:
                 self.healthRate = 100
@@ -62,5 +62,5 @@ class Person:
         else:
             print("Meals must be integer")
 
-    def Buy(self, items):
+    def Buy(self, items: int):
         self.money -= items * 10

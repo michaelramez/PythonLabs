@@ -3,7 +3,7 @@ from Person import Person
 
 
 class Employee(Person):
-    def __init__(self, name, money, eid, car: Car, salary, distanceToWork):
+    def __init__(self, name: str, money: int, eid: int, car: Car, salary: int, distanceToWork: int):
         super().__init__(name, money)
         self.eid = eid
         self.car = car
@@ -12,10 +12,10 @@ class Employee(Person):
 
     @property
     def salary(self):
-        return  self.salary
+        return self.salary
 
     @salary.setter
-    def salary(self, salary):
+    def salary(self, salary: int):
         if isinstance(salary, int):
             if salary > 1000:
                 self.salary = salary
@@ -24,7 +24,7 @@ class Employee(Person):
         else:
             print("Salary must be integer")
 
-    def Work(self, hours):
+    def Work(self, hours: int):
         if isinstance(hours, int):
 
             if hours == 8:
@@ -36,7 +36,7 @@ class Employee(Person):
         else:
             print("Hours must be integer")
 
-    def Drive(self, velocity, distance):
+    def Drive(self, velocity: int, distance: int):
         self.car.Run(velocity, distance)
 
     def Refuel(self, gasAmmount=100):
